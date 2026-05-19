@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import InputText from "../../components/InputText";
+import InputPassword from "../../components/InputPassword";
 import Button from "../../components/Button";
 
 import { styles } from "./Register.styles";
@@ -11,8 +12,8 @@ export default function RegisterScreen() {
         <InputText label="Nome completo" icon="account" />
         <InputText label="Email" icon="email" />
         <InputText label="Celular" icon="cellphone-arrow-down-variant" />
-        <InputText label="Senha" icon="lock" />
-        <InputText label="Confirmar Senha" icon="lock" />
+        <InputPassword label="Senha" />
+        <InputPassword label="Confirmar Senha" />
         <Button text="Register" />
       </View>
     </View>
