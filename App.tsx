@@ -5,7 +5,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 
 // Screens
-import LoginScreen from "./src/screens/LoginScreen";
+import LoginScreen from "./src/screens/login/LoginScreen";
 
 SplashScreen.preventAutoHideAsync();
 
