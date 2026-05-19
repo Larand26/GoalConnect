@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import InputText from "../components/InputText";
+import Button from "../components/Button";
 
 export default function LoginScreen() {
   return (
@@ -14,6 +15,7 @@ export default function LoginScreen() {
           <InputText label="Password" icon="lock" />
           <Text style={styles.link}>Não tenho uma conta</Text>
         </View>
+        <Button text="Entrar" />
       </View>
     </View>
   );
@@ -33,12 +35,20 @@ const styles = StyleSheet.create({
   },
   form: {
     width: "80%",
-    height: "50%",
+    height: "60%",
     backgroundColor: "#ffffffcb",
     padding: 20,
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "space-around",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   inputContainer: {
     width: "100%",
