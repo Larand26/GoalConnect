@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 
 // Screens
 import LoginScreen from "./src/screens/login/LoginScreen";
+import RegisterScreen from "./src/screens/register/RegisterScreen";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [screen, setScreen] = useState("login");
+  const [screen, setScreen] = useState("register");
 
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
@@ -34,7 +35,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       {screen === "login" && <LoginScreen />}
-      <StatusBar style="auto" />
+      {screen === "register" && <RegisterScreen />}
+      <StatusBar style="light" />
     </View>
   );
 }
