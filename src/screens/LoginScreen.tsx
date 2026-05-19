@@ -12,6 +12,7 @@ export default function LoginScreen() {
         <View style={styles.inputContainer}>
           <InputText label="Login" icon="email" />
           <InputText label="Password" icon="lock" />
+          <Text style={styles.link}>Não tenho uma conta</Text>
         </View>
       </View>
     </View>
@@ -46,5 +47,10 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "Bebas-Regular",
     fontSize: 24,
+  },
+  link: {
+    color: "#00988D",
+    textDecorationLine: "underline",
+    fontSize: 10,
   },
 });
