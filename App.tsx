@@ -2,11 +2,16 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+// Screens
+import LoginScreen from "./src/screens/LoginScreen";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [screen, setScreen] = useState("login");
+
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
     "Bebas-Regular": require("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf"),
@@ -28,9 +33,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        Open up App.tsx to start working on your app!
-      </Text>
+      {screen === "login" && <LoginScreen />}
       <StatusBar style="auto" />
     </View>
   );
