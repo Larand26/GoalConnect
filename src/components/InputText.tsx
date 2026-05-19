@@ -18,7 +18,7 @@ export default function InputText(props: {
           onChangeText={props.onChangeText}
         />
         {props.icon && (
-          <MaterialCommunityIcons name={props.icon} size={20} color="#666" />
+          <MaterialCommunityIcons name={props.icon} size={20} color="#1c1c1c" />
         )}
       </View>
     </View>
