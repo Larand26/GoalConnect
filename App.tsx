@@ -9,10 +9,14 @@ import LoginScreen from "./src/screens/login/LoginScreen";
 import RegisterScreen from "./src/screens/register/RegisterScreen";
 import HomeScreen from "./src/screens/home/HomeScreen";
 
+// Bars
+import TopBar from "./src/components/TopBar";
+
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [screen, setScreen] = useState("login");
+  const [screen, setScreen] = useState("home");
+  const [loggedIn, setLoggedIn] = useState(true);
 
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
@@ -35,6 +39,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      {loggedIn && <TopBar />}
       {screen === "login" && <LoginScreen />}
       {screen === "register" && <RegisterScreen />}
       {screen === "home" && <HomeScreen />}
@@ -47,7 +52,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "#013750",
   },
   text: {
