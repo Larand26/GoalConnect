@@ -9,6 +9,7 @@ import LoginScreen from "./src/screens/login/LoginScreen";
 import RegisterScreen from "./src/screens/register/RegisterScreen";
 import HomeScreen from "./src/screens/home/HomeScreen";
 import EventScreen from "./src/screens/event/EventScreen";
+import ChatScreen from "./src/screens/Chat/ChatScreen";
 
 // Bars
 import TopBar from "./src/components/TopBar";
@@ -17,7 +18,7 @@ import NavBar from "./src/components/NavBar";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [screen, setScreen] = useState("event");
+  const [screen, setScreen] = useState("chat");
   const [loggedIn, setLoggedIn] = useState(true);
 
   const [loaded, error] = useFonts({
@@ -53,6 +54,7 @@ export default function App() {
       {screen === "register" && <RegisterScreen />}
       {screen === "home" && <HomeScreen />}
       {screen === "event" && <EventScreen />}
+      {screen === "chat" && <ChatScreen />}
       {loggedIn && <NavBar />}
       <StatusBar style="light" />
     </View>
