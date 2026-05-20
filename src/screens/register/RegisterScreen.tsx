@@ -14,7 +14,7 @@ export default function RegisterScreen() {
         <InputText label="Celular" icon="cellphone-arrow-down-variant" />
         <InputPassword label="Senha" />
         <InputPassword label="Confirmar Senha" />
-        <Button text="Register" />
+        <Button text="Cadastrar" />
       </View>
     </View>
   );
