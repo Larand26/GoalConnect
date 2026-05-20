@@ -10,20 +10,15 @@ export const styles = StyleSheet.create({
   },
   form: {
     width: "80%",
-    height: "70%",
+    maxHeight: "70%",
     backgroundColor: "#ffffffcb",
-    padding: 20,
     borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "space-around",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    borderWidth: 1,
+    overflow: "hidden",
+  },
+  formContent: {
+    padding: 20,
+    gap: 20,
   },
   inputContainer: {
     width: "100%",
