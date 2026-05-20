@@ -16,7 +16,7 @@ export default function InputText(props: {
           placeholder={props.placeholder}
           value={props.value}
           onChangeText={props.onChangeText}
-          style={styles.input}
+          style={props.icon ? { width: "90%" } : { width: "100%" }}
         />
         {props.icon && (
           <MaterialCommunityIcons name={props.icon} size={20} color="#1c1c1c" />
@@ -46,8 +46,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#1c1c1c",
     justifyContent: "space-between",
-  },
-  input: {
-    width: "90%",
   },
 });
