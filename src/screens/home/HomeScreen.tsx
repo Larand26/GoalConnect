@@ -1,10 +1,5 @@
-import { View, Text, Image } from "react-native";
-import { styles } from "./HomeScreen.styles";
+import FanMap from "../../components/FanMap";
 
 export default function HomeScreen() {
-  return (
-    <View>
-      <></>
-    </View>
-  );
+  return <FanMap />;
 }
