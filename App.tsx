@@ -23,6 +23,7 @@ export default function App() {
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
     "Bebas-Regular": require("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf"),
+    "Digital-Numbers-Regular": require("./assets/fonts/Digital_Numbers/DigitalNumbers-Regular.ttf"),
   });
 
   useEffect(() => {
