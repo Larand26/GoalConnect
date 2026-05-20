@@ -32,6 +32,12 @@ export default function App() {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    if (error) {
+      console.error("Erro ao carregar fontes:", error);
+    }
+  }, [error]);
+
   if (!loaded) {
     return (
       <View style={styles.container}>
