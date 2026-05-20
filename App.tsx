@@ -12,7 +12,7 @@ import HomeScreen from "./src/screens/home/HomeScreen";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [screen, setScreen] = useState("register");
+  const [screen, setScreen] = useState("login");
 
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
