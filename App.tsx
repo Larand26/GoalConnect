@@ -11,6 +11,7 @@ import HomeScreen from "./src/screens/home/HomeScreen";
 
 // Bars
 import TopBar from "./src/components/TopBar";
+import NavBar from "./src/components/NavBar";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,6 +44,7 @@ export default function App() {
       {screen === "login" && <LoginScreen />}
       {screen === "register" && <RegisterScreen />}
       {screen === "home" && <HomeScreen />}
+      {loggedIn && <NavBar />}
       <StatusBar style="light" />
     </View>
   );
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: "#013750",
   },
   text: {
