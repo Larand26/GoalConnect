@@ -5,6 +5,7 @@ export default function InputText(props: {
   placeholder?: string;
   label?: string;
   icon?: keyof typeof MaterialCommunityIcons.glyphMap;
+  placeholderTextColor?: string;
   value?: string;
   onChangeText?: (text: string) => void;
 }) {
@@ -14,6 +15,7 @@ export default function InputText(props: {
       <View style={styles.inputContainer}>
         <TextInput
           placeholder={props.placeholder}
+          placeholderTextColor={props.placeholderTextColor ?? "#888888"}
           value={props.value}
           onChangeText={props.onChangeText}
           style={props.icon ? { width: "90%" } : { width: "100%" }}
