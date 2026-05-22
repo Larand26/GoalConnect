@@ -21,6 +21,10 @@ export default function App() {
   const [screen, setScreen] = useState("chat");
   const [loggedIn, setLoggedIn] = useState(true);
 
+  const changeScreen = (newScreen: string) => {
+    setScreen(newScreen);
+  };
+
   const [loaded, error] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter/Inter_18pt-Regular.ttf"),
     "Bebas-Regular": require("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf"),
@@ -55,7 +59,7 @@ export default function App() {
       {screen === "home" && <HomeScreen />}
       {screen === "event" && <EventScreen />}
       {screen === "chat" && <ChatScreen />}
-      {loggedIn && <NavBar />}
+      {loggedIn && <NavBar changeScreen={changeScreen} activeScreen={screen} />}
       <StatusBar style="light" />
     </View>
   );

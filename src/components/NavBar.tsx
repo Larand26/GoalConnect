@@ -2,27 +2,43 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const navItems = [
-  { label: "Home", icon: "home", active: true },
-  { label: "Eventos", icon: "calendar", active: false },
-  { label: "Chats", icon: "chat", active: false },
-  { label: "Perfil", icon: "account-circle", active: false },
+  { id: "home", label: "Home", icon: "home", active: true },
+  { id: "event", label: "Eventos", icon: "calendar", active: false },
+  { id: "chat", label: "Chats", icon: "chat", active: false },
+  { id: "perfil", label: "Perfil", icon: "account-circle", active: false },
 ] as const;
 
-export default function NavBar() {
+export default function NavBar(props: {
+  changeScreen: (screen: string) => void;
+  activeScreen?: string;
+}) {
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
         {navItems.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.navItem}>
+          <TouchableOpacity
+            key={index}
+            style={styles.navItem}
+            onPress={() => props.changeScreen(item.id.toLowerCase())}
+          >
             <MaterialCommunityIcons
               name={item.icon}
               size={28}
-              color={item.active ? "#00988D" : "#1c1c1c"}
+              color={
+                props.activeScreen === item.id.toLowerCase()
+                  ? "#00988D"
+                  : "#1c1c1c"
+              }
             />
             <Text
               style={[
                 styles.label,
-                { color: item.active ? "#00988D" : "#1c1c1c" },
+                {
+                  color:
+                    props.activeScreen === item.id.toLowerCase()
+                      ? "#00988D"
+                      : "#1c1c1c",
+                },
               ]}
             >
               {item.label}
